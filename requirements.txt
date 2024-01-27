@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+python-dotenv
+pytest==7.1.2
+httpx
+requests
+alt-profanity-check
+profanity-check
+spacy
+transformers
+datasets
+torch
+annoy
+accelerate

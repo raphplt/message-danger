@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  api:
+    image: 'api:latest'
+    container_name: 'api'
+    build:
+      context: '.'
+      dockerfile: './Dockerfile'
+    volumes:
+      - './src/:/app/src'
+    ports:
+      - '80:5000'
+    networks:
+      - 'api'
+    environment:
+      SAPLINGS_API_KEY: 'BW4QWNF536YDBI3NF56VA1YAIUO7AUD5'
+
+  api_test:
+    image: 'api:latest'
+    container_name: 'api_test'
+    build:
+      context: '.'
+      dockerfile: './Dockerfile'
+    volumes:
+      - './src/:/app/src'
+    ports:
+      - '5000:5000'
+    networks:
+      - 'api'
+    environment:
+      saplings_api_key: 'BW4QWNF536YDBI3NF56VA1YAIUO7AUD5'
+
+volumes:
+  database:
+
+networks:
+  api:
